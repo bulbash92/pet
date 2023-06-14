@@ -1,9 +1,10 @@
 .Sidebar {
     height: 100vh;
-    background: var(--inverted-bg-color);
+    background: var(--sidebar-bg-color);
     width: var(--sidebar-width);
     position: relative;
     transition: width 0.3s;
+    border-radius: 0 10px 10px 0;
 }
 
 .collapsed {

@@ -2,23 +2,21 @@
     height: 100vh;
     background: var(--sidebar-bg-color);
     width: var(--sidebar-width);
-    position: relative;
     transition: width 0.3s;
     border-radius: 0 10px 10px 0;
+    padding: 10px;
 }
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
 }
 
-.switchers {
+.links {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    width: 100%;
-    position: absolute;
-    bottom: 20px;
-
-    .lang {
-        margin-left: 5px;
-    }
+    gap: 15px;
+    margin-top: 20px;
 }
+
+

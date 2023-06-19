@@ -1,5 +1,10 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { useTranslation } from 'react-i18next';
+import { Modal } from 'shared/ui/Modal/Modal';
+import React, { useCallback, useState } from 'react';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { LangSwitcher } from 'widgets/LangSwitcher/ui/LangSwitcher';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import classes from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -7,12 +12,30 @@ interface NavbarProps {
 }
 
 export function Navbar({ className }: NavbarProps) {
+    const { t } = useTranslation();
+    const [isAuthModal, setIsAuthModal] = useState(false);
+
+    const onToggleModal = useCallback(() => {
+        setIsAuthModal((prev) => !prev);
+    }, []);
+
     return (
         <div className={classNames(classes.Navbar, {}, [className])}>
-            <div className={classes.links}>
-                <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={classes.mainLink}>Главная</AppLink>
-                <AppLink theme={AppLinkTheme.SECONDARY} to="/about">О сайте</AppLink>
+
+            <div className={classNames(classes.switchers)}>
+                <ThemeSwitcher />
+                <LangSwitcher className={classes.lang} />
+                <Button theme={ThemeButton.CLEAR} onClick={onToggleModal}>
+                    {t('Sign in')}
+                </Button>
             </div>
+            {/* eslint-disable-next-line i18next/no-literal-string */}
+            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
+                Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Beatae delectus illum inventore omnis
+                recusandae? Ab accusantium at error, excepturi incidunt,
+                ipsum molestias mollitia nemo nobis pariatur placeat quia quidem quis?
+            </Modal>
         </div>
     );
 }

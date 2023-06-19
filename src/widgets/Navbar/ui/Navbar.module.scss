@@ -4,12 +4,16 @@
     display: flex;
     align-items: center;
     padding: 20px;
+}
 
-    .links {
-        margin-left: auto;
+.switchers {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
 
-        .mainLink {
-            margin-right: 15px;
-        }
+
+    .lang {
+        margin-left: 5px;
     }
 }

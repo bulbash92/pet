@@ -20,7 +20,10 @@ export function Navbar({ className }: NavbarProps) {
     }, []);
 
     return (
-        <div className={classNames(classes.Navbar, {}, [className])}>
+        <div
+            className={classNames(classes.Navbar, {}, [className])}
+            data-testid="navbar"
+        >
 
             <div className={classNames(classes.switchers)}>
                 <ThemeSwitcher />
@@ -31,10 +34,7 @@ export function Navbar({ className }: NavbarProps) {
             </div>
             {/* eslint-disable-next-line i18next/no-literal-string */}
             <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-                Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Beatae delectus illum inventore omnis
-                recusandae? Ab accusantium at error, excepturi incidunt,
-                ipsum molestias mollitia nemo nobis pariatur placeat quia quidem quis?
+                test
             </Modal>
         </div>
     );

@@ -7,8 +7,7 @@ module.exports = {
     extends: [
         'plugin:react/recommended',
         'plugin:react/jsx-runtime',
-        'airbnb',
-        'plugin:i18next/recommended',
+        'airbnb', 'plugin:i18next/recommended',
         'plugin:react-hooks/recommended',
     ],
     parser: '@typescript-eslint/parser',
@@ -19,20 +18,14 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: [
-        'react',
-        '@typescript-eslint',
-        'i18next',
-        'react-hooks',
-    ],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
-        'react/jsx-filename-extension': [
-            2,
-            { extensions: ['.js', '.jsx', '.tsx'] },
-        ],
+        'react/jsx-filename-extension': [2, {
+            extensions: ['.js', '.jsx', '.tsx'],
+        }],
         'import/no-unresolved': 'off',
         'react/react-in-jsx-scope': 'off',
         'import/prefer-default-export': 'off',
@@ -43,12 +36,17 @@ module.exports = {
         'no-shadow': 'off',
         'import/extensions': 'off',
         'no-underscore-dangle': 'off',
-        'import/no-extraneous-dependencies': [
-            'error',
-            { devDependencies: true },
-        ],
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
-        'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'import/no-extraneous-dependencies': ['error', {
+            devDependencies: true,
+        }],
+        'i18next/no-literal-string': ['error', {
+            markupOnly: true,
+            ignoreAttribute: ['data-testid', 'to'],
+        }],
+        'max-len': ['error', {
+            ignoreComments: true,
+            code: 100,
+        }],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error',
@@ -57,4 +55,10 @@ module.exports = {
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [{
+        files: ['**/src/**/*.test.{ts,tsx}'],
+        rules: {
+            'i18next/no-literal-string': 'off',
+        },
+    }],
 };

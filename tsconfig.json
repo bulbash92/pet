@@ -20,4 +20,9 @@
     }
   },
   "lib": ["es2017"],
+  "include": [
+    "./config/jest/setupTests.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ]
 }

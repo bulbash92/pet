@@ -1,7 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "include": [
-    "./config/jest/setupTests.ts",
-    "./src/**/*.{ts, tsx}"
-  ]
-}

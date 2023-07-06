@@ -9,7 +9,7 @@ export default {
     clearMocks: true,
     testEnvironment: 'jsdom',
     coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
-    moduleDirectories: ['node_modules', 'src'],
+    moduleDirectories: ['node_modules'],
     moduleFileExtensions: [
         'js',
         'mjs',
@@ -27,11 +27,6 @@ export default {
     moduleNameMapper: {
         '\\.(s?css)$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-    },
-    globals: {
-        'ts-jest': {
-            tsConfig: 'tsconfig.test.json',
-        },
     },
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,

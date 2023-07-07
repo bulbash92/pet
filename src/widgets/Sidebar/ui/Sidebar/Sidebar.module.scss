@@ -4,7 +4,7 @@
     width: var(--sidebar-width);
     transition: width 0.3s;
     border-radius: 0 10px 10px 0;
-    padding: 15px;
+    padding: 30px;
     position: relative;
 }
 
@@ -25,6 +25,7 @@
 .link {
     margin-left: 10px;
     opacity: 1;
+    transition: 0.3s opacity;
 }
 
 .icon {
@@ -43,6 +44,10 @@
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
+
+    .linkItem {
+        height: 25px;
+    }
 
     .link {
         opacity: 0;

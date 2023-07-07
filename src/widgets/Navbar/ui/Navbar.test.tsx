@@ -1,12 +1,12 @@
 import { screen } from '@testing-library/react';
 import {
-    renderWithTranslation,
-} from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
+    componentRender,
+} from 'shared/lib/tests/componentRender/componentRender';
 import { Navbar } from './Navbar';
 
 describe('Navbar', () => {
     test('Test render', () => {
-        renderWithTranslation(<Navbar />);
+        componentRender(<Navbar />);
         expect(screen.getByTestId('navbar')).toBeInTheDocument();
     });
 });

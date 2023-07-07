@@ -4,7 +4,7 @@ import { Modal } from 'shared/ui/Modal/Modal';
 import React, { useCallback, useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher/ui/LangSwitcher';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import classes from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -28,7 +28,7 @@ export function Navbar({ className }: NavbarProps) {
             <div className={classNames(classes.switchers)}>
                 <ThemeSwitcher />
                 <LangSwitcher className={classes.lang} />
-                <Button theme={ThemeButton.CLEAR} onClick={onToggleModal}>
+                <Button theme={ButtonTheme.CLEAR} onClick={onToggleModal}>
                     {t('Sign in')}
                 </Button>
             </div>

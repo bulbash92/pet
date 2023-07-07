@@ -1,15 +1,13 @@
 .Sidebar {
     height: 100vh;
-    background: var(--sidebar-bg-color);
+    background: var(--main-color);
     width: var(--sidebar-width);
     transition: width 0.3s;
     border-radius: 0 10px 10px 0;
-    padding: 10px;
+    padding: 15px;
+    position: relative;
 }
 
-.collapsed {
-    width: var(--sidebar-width-collapsed);
-}
 
 .links {
     display: flex;
@@ -18,5 +16,40 @@
     gap: 15px;
     margin-top: 20px;
 }
+
+.linkItem {
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    margin-left: 10px;
+    opacity: 1;
+}
+
+.icon {
+    fill: var(--link-color)
+}
+
+.toggleButton {
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    right: - 32px;
+}
+
+.collapsed {
+    width: var(--sidebar-width-collapsed);
+
+    .link {
+        opacity: 0;
+        transition: 0.2s opacity;
+        width: 0;
+    }
+}
+
 
 

@@ -6,6 +6,9 @@
     --font-size-l: 24px;
     --font-line-l: 32px;
     --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+    --font-size-Xl: 32px;
+    --font-line-Xl: 40px;
+    --font-l: var(--font-size-Xl) / var(--font-line-Xl) var(--font-family-main);
 
     // sizes
     --navbar-height: 50px;
@@ -17,4 +20,5 @@
 
     // colors
     --overlay-color: rgba(0 0 0 / 60%);
+    --link-color: #FDFDFD;
 }

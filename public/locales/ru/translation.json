@@ -6,5 +6,6 @@
   "Main": "Главная",
   "About page": "О Сайте",
   "Sign in": "Войти",
-  "toggle": "toggle"
+  "increment": "increment",
+  "decrement": "decrement"
 }

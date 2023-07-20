@@ -1,5 +1,5 @@
 import {
-    FC, PropsWithChildren, ReactNode, useMemo, useState,
+    FC, PropsWithChildren, ReactNode, useEffect, useMemo, useState,
 } from 'react';
 import {
     LOCAL_STORAGE_THEME_KEY,
@@ -27,6 +27,14 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
         }),
         [theme],
     );
+
+    useEffect(() => {
+        const theme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
+
+        localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
+
+        document.body.className = theme;
+    }, [theme]);
 
     return (
         <ThemeContext.Provider value={defaultProps}>

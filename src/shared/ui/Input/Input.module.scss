@@ -1,0 +1,19 @@
+.Input {
+    display: block;
+    border-radius: 5px;
+    background: var(--input-bg-color);
+    border: none;
+    height: 40px;
+    padding: 12px 8px;
+    outline: none;
+    color: var(--primary-color);
+
+    &::placeholder,
+    &::-ms-input-placeholder {
+        color: var(--placeholder-color);
+    }
+
+    &:focus {
+        background: var(--input-bg-focused);
+    }
+}

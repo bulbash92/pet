@@ -7,5 +7,8 @@
   "About page": "О Сайте",
   "Sign in": "Войти",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "Login": "Войти",
+  "Enter login":"Введите логин",
+  "Enter password":"Введите пароль"
 }

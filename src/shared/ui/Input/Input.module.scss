@@ -8,8 +8,7 @@
     outline: none;
     color: var(--primary-color);
 
-    &::placeholder,
-    &::-ms-input-placeholder {
+    &::placeholder {
         color: var(--placeholder-color);
     }
 
